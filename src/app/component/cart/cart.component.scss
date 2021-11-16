@@ -1,0 +1,95 @@
+.container {
+  margin-top: 20px;
+}
+
+.item {
+  height: 170px;
+  border: 1px solid black;
+  position: relative;
+  z-index: 1;
+}
+
+.item img {
+  margin: 10px 15px 5px 0px;
+  object-fit: contain;
+  max-height: 120px;
+  width: 200px;
+  height: auto;
+  float: left;
+  vertical-align: middle;
+}
+
+.item h5 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 10px;
+}
+
+.item p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.item p[title]:hover::after {
+  color: red;
+}
+
+.item:hover {
+  border: 1px solid blue;
+}
+
+span {
+  cursor: pointer;
+}
+
+.adjust-quantity {
+  background: #f2f2f2;
+  color: black;
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+input {
+  height: 28px;
+  width: 45px;
+  text-align: center;
+  font-size: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 2px;
+}
+
+.remove {
+  margin-top: 5px;
+}
+
+.total {
+  margin-left: 20px;
+  position: fixed;
+  z-index: 99;
+  right: 0px;
+}
+
+.total-details {
+  margin: auto;
+  border: 2px solid black;
+}
+
+.btn-danger {
+  margin-left: 10px;
+}
+
+.empty-confirmation {
+  margin-top: 12px;
+}
+
+.btn-confirmation {
+  margin: 0% 16%;
+}

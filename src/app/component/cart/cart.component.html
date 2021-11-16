@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <ng-container *ngIf="cartContents.length != 0">
+      <ng-container *ngFor="let item of cartContents">
+          <div class="col-md-8 item">
+              <img src="{{item.image}}" title="{{item.title}}">
+              <h5 title="{{item.title}}">{{item.title}}</h5>
+              <ng-container *ngIf="item.onSale">
+                <p><strong>Price:</strong>&nbsp;<s>${{item.price}}</s>&nbsp;<span style="color:red"><b>${{item.finalPrice}}</b> *{{item.discount}}% OFF*</span></p>
+              </ng-container>
+              <ng-container *ngIf="!item.onSale">
+                <p><strong>Price:</strong> ${{item.price}}</p>
+              </ng-container>
+              <div><strong>Quantity: </strong>
+                  <button class="btn btn-secondary btn-sm shadow adjust-quantity" (click)=decrementCart(item)>-</button>
+                  <input type="text" value="{{item.quantity}}" (change)="updateQuantity(item, $event)">
+                  <button class="btn btn-secondary btn-sm shadow adjust-quantity" (click)=incrementCart(item)>+</button>
+              </div>
+              <button class="btn btn-primary remove" (click)=removeFromCart(item)>Remove from cart</button>
+          </div>
+      </ng-container>
+    </ng-container>
+      <ng-container *ngIf="cartContents.length == 0">
+        <div class="empty-cart">
+            <div class="center">
+                <h4>Your cart is empty!</h4>
+                <button routerLink="/products" class="btn btn-primary">Shop Now</button>
+            </div>
+        </div>
+      </ng-container>
+    <div class="col-md-4 total">
+      <div class="col-md-11 card total-details">
+        <div style="padding: 10px">
+          <p><strong>Total:</strong> ${{total}}</p>
+          <button class="btn btn-primary" routerLink="checkout">Proceed to checkout</button>
+          <button class="btn btn-danger" (click)="confirmEmptyToggle()">Empty cart</button>
+          <ng-container *ngIf="confirmEmptyCart">
+            <div class="empty-confirmation">
+              <p>Are you sure you want to remove all items from your shopping cart?</p>
+              <button class="btn btn-secondary btn-confirmation" (click)="emptyCart()">Yes</button><button class="btn btn-secondary btn-confirmation" (click)="confirmEmptyToggle()">No</button>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

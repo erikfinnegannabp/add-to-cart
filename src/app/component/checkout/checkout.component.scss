@@ -1,0 +1,25 @@
+mat-card {
+  margin: 10px;
+}
+
+mat-toolbar {
+  background-color: #E5E4EF;
+}
+
+mat-expansion-panel {
+  border: 1px solid gray;
+}
+
+mat-panel-title {
+  font-weight: bold;
+  color: #7D79AF;
+}
+
+.purple-text, th, td, p, mat-panel-title {
+  color: #7D79AF;
+}
+
+.back-to-cart {
+  position: absolute;
+  color: #D50032
+}

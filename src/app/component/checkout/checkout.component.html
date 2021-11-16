@@ -1,0 +1,54 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <mat-icon class="back-to-cart" routerLink="/cart">arrow_back</mat-icon>
+    <span class="back-to-cart" style="margin-left: 30px" routerLink="/cart">Back to cart editor</span>
+    <span class="purple-text" style="margin: 0 auto">Complete Checkout</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<ng-container *ngIf="cartContents.length == 0">
+  <div class="empty-cart" style="margin: 3rem">
+      <div class="center">
+          <h4>Your cart is empty!</h4>
+          <button routerLink="/products" class="btn btn-primary" style="margin-bottom: 3rem">Shop Now</button>
+      </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="cartContents.length != 0">
+  <div style="display:flex;">
+    <mat-card style="width:60%" class="order-summary">
+
+      <mat-accordion multi="false">
+
+        <mat-expansion-panel expanded>
+          <mat-expansion-panel-header>
+            <mat-panel-title>ORDER SUMMARY</mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-ordersummary></app-ordersummary>
+          <mat-divider></mat-divider>
+          <app-discountcode></app-discountcode>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>BILLING INFORMATION</mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-billinginfo></app-billinginfo>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>SHIPPING INFORMATION</mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-shippinginfo></app-shippinginfo>
+        </mat-expansion-panel>
+
+      </mat-accordion>
+    </mat-card>
+
+    <mat-card style="width:40%">
+      <app-paymentinfo></app-paymentinfo>
+    </mat-card>
+  </div>
+</ng-container>

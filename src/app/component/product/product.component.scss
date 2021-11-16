@@ -1,0 +1,50 @@
+.card-top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: .25rem;
+}
+.category img {
+  width: 64px;
+  height: 64px;
+  margin-top: 5px;
+}
+.category {
+  margin: 0px 15px;
+  text-align: center;
+}
+.category a:hover {
+  color: blue;
+}
+
+.item {
+  height: 300px;
+}
+
+.item img {
+  margin: 10px 0px 5px 0px;
+  object-fit: contain;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+}
+
+.item p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100ch;
+}
+
+.item p[title]:hover::after {
+  color: red;
+}
+
+.item:hover {
+  border: 1px solid blue;
+}

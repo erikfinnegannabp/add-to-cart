@@ -1,0 +1,90 @@
+mat-toolbar {
+  background-color: #E5E4EF;
+}
+
+table {
+  border-bottom: 5px solid #7D79AF;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.purple-text {
+  color: #7D79AF;
+}
+
+.back-to-cart {
+  position: absolute;
+  color: #D50032
+}
+
+mat-card {
+  margin-top: 1rem;
+}
+
+.mat-icon {
+  vertical-align: top;
+  color: #D50032
+}
+
+.order-header p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #7D79AF;
+  margin: 0px;
+}
+
+button {
+  background-color: white;
+  color: #D50032;
+  outline-style: solid;
+  outline-color: #D50032;
+  border-radius: 50px;
+  float: right;
+  margin: 2rem 8rem 2rem 2rem;
+}
+
+.order-summary-table-container {
+  min-height: 200px;
+  max-height: 300px;
+}
+
+.mat-header-cell, .mat-cell, .mat-footer-cell {
+  text-align: center;
+  padding: 0px 13px;
+}
+
+.mat-footer-cell {
+  font-size: 1rem;
+}
+
+.mat-header-cell {
+  background-color: #E5E4EF;
+}
+
+.purple-text, th, td, p {
+  color: #7D79AF;
+}
+
+.back-to-cart {
+  position: absolute;
+  color: #D50032
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}

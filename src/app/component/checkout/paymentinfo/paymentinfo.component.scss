@@ -1,0 +1,43 @@
+h3 {
+  color: #7D79AF;
+  font-weight: bold;
+}
+
+input, span, mat-select {
+  font-weight: bold;
+}
+
+mat-divider {
+  margin-top: 19px;
+}
+
+.discount-amount, .total-amount {
+  margin-top: 2rem;
+}
+
+.place-order-button {
+  background-color: #D50032;
+  color: white;
+  border-radius: 50px;
+  float: right;
+  margin: 2rem 8rem 2rem 2rem;
+}
+
+::ng-deep .custom-frame {
+  & .mat-checkbox-background, .mat-checkbox-frame {
+    border-radius: 70% !important;
+  }
+}
+
+.auth-confirmation {
+  color: #888;
+  font-size: 12px;
+  margin-top: 1rem;
+}
+
+.discount-code {
+  font-size: 14px;
+  color: #D50032;
+  font-weight: bold;
+  margin-top: 0.6rem;
+}

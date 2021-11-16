@@ -1,0 +1,35 @@
+h3 {
+  font-weight: bold;
+  color: #7D79AF;
+}
+
+mat-form-field {
+  width: 14rem;
+}
+
+mat-label, .mat-hint {
+  color: #D50032;
+}
+
+input {
+  font-weight: bold;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #D50032;
+}
+
+.discount-code-entry {
+  float: left;
+  margin-left: 5rem;
+  margin-top: 1rem;
+}
+
+.apply-discount-button {
+  background-color: #D50032;
+  color: white;
+  border-radius: 50px;
+  float: right;
+  margin-top: 3.5rem;
+  margin-right: 7rem;
+}

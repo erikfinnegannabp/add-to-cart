@@ -1,0 +1,12 @@
+<div class="discount-code-entry">
+  <h3>Have a discount code?</h3>
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Discount Code</mat-label>
+      <input type="text" matInput formControlName="enteredCode">
+      <mat-hint *ngIf="showHint">{{hintMessage}}</mat-hint>
+    </mat-form-field>
+  </form>
+</div>
+
+<button mat-button (click)="onApplyCode()" class="apply-discount-button" style="width: 200px">Apply Code</button>

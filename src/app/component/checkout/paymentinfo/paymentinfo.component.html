@@ -1,0 +1,75 @@
+<h3>PAYMENT DETAILS</h3>
+
+<form [formGroup]="creditCardInfo" (change)="onUpdateCreditCardInfo()">
+
+  <mat-form-field style="width: 100%">
+    <mat-label>Cardholder Name</mat-label>
+    <input type="text" matInput formControlName="name" required>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%">
+    <mat-label>Card Number</mat-label>
+    <input type="text" matInput formControlName="cardNumber" required>
+  </mat-form-field>
+
+  <mat-form-field style="width: 40%">
+    <mat-label>Expiration Date</mat-label>
+    <mat-select formControlName="expirationMonth" required>
+      <mat-option [value]="'January'">January</mat-option>
+      <mat-option [value]="'February'">February</mat-option>
+      <mat-option [value]="'March'">March</mat-option>
+      <mat-option [value]="'April'">April</mat-option>
+      <mat-option [value]="'May'">May</mat-option>
+      <mat-option [value]="'June'">June</mat-option>
+      <mat-option [value]="'July'">July</mat-option>
+      <mat-option [value]="'August'">August</mat-option>
+      <mat-option [value]="'September'">September</mat-option>
+      <mat-option [value]="'October'">October</mat-option>
+      <mat-option [value]="'November'">November</mat-option>
+      <mat-option [value]="'December'">December</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field style="width: 47%">
+    <mat-select formControlName="expirationYear" required>
+      <mat-option *ngFor="let year of nextTenYears" [value]="year">
+        {{year}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field style="width: 13%">
+    <mat-label>CVV</mat-label>
+    <input type="text" matInput formControlName="cvv" style="background-color: #eee;" required>
+  </mat-form-field>
+
+<div style="margin-top: 10%">
+  <span style="float: left">DISCOUNT</span>
+  <span style="float: right">${{discountAmount}}</span>
+  <mat-divider></mat-divider><br>
+  <div class="discount-code">
+    <span *ngIf="discountAmount != '0.00'" style="font-weight: normal;">
+      Applied Discount Code <span style="font-weight: bold;">{{discountCode}}</span>
+    </span>
+  </div>
+</div>
+<div class="total-amount">
+  <span style="float: left">TOTAL</span>
+  <span style="float: right">${{cartTotal}}</span>
+  <mat-divider></mat-divider><br>
+
+
+</div>
+
+<button mat-button class="place-order-button" style="width: 200px" routerLink="confirmation" [disabled]="creditCardInfo.invalid || hasMissingInfo || !creditCardInfo.value.authorized">Place Order</button>
+
+<mat-checkbox class="custom-frame" formControlName="authorized">
+  <span class="auth-confirmation">PAYMENT AUTHORIZATION</span>
+</mat-checkbox>
+
+<p class="auth-confirmation">I, {{creditCardInfo.value.name || "[name]"}}, authorized this charge on {{currentDate}}
+  of {{"$" + cartTotal || "[amount]"}} to the [card type] ending in
+  {{creditCardInfo.value.cardNumber.slice(-4) || "[last 4]"}} and payment to the National Association of
+  Boards of Pharmacy (NABP) for the purchase shown.
+</p>
+</form>

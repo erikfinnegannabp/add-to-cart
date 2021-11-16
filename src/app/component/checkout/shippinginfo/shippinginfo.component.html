@@ -1,0 +1,56 @@
+<div>
+  <span style="font-size: 0.6rem; color: #888" class="change-my-info">SAME AS BILLING INFORMATION</span>
+  <mat-slide-toggle style="margin-left: 1rem" (change)="onToggleUseBilling()" [(ngModel)]="useBillingInfo"></mat-slide-toggle>
+  <mat-icon class="change-my-info" style="margin-left: 7.6rem">arrow_forward</mat-icon>
+  <span style="margin-left: 3px" class="change-my-info">Change My Information</span>
+</div>
+<div style="display: flex">
+
+<form style="display: flex" [formGroup]="myFormGroup" (change)="onChangeShippingData()">
+  <div style="width:50%" class="left-billing-info">
+
+    <mat-form-field>
+      <mat-label>Name *</mat-label>
+      <input type="text" matInput formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Street Address *</mat-label>
+      <input type="text" matInput formControlName="streetAddress">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>City *</mat-label>
+      <input type="text" matInput formControlName="city">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Contact Email Address *</mat-label>
+      <input type="text" matInput formControlName="contactEmail">
+    </mat-form-field>
+  </div>
+
+  <div style="width:40%; margin-left: 5%;" class="right-billing-info">
+
+    <mat-form-field>
+      <mat-label>Contact Phone Number *</mat-label>
+      <input type="text" matInput formControlName="contactPhone">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Zip Code/Postal Code *</mat-label>
+      <input type="text" matInput formControlName="zipCode">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>State/Territory/Region/Province *</mat-label>
+      <input type="text" matInput formControlName="stateTerritoryRegionProvince">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Country *</mat-label>
+      <input type="text" matInput formControlName="country">
+    </mat-form-field>
+  </div>
+</form>
+</div>
