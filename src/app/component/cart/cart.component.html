@@ -6,7 +6,7 @@
               <img src="{{item.image}}" title="{{item.title}}">
               <h5 title="{{item.title}}">{{item.title}}</h5>
               <ng-container *ngIf="item.onSale">
-                <p><strong>Price:</strong>&nbsp;<s>${{item.price}}</s>&nbsp;<span style="color:red"><b>${{item.finalPrice}}</b> *{{item.discount}}% OFF*</span></p>
+                <p><strong>Price:</strong>&nbsp;<s>${{item.price}}</s>&nbsp;<span class="sale-text"><b>${{item.finalPrice}}</b> *{{item.discount}}% OFF*</span></p>
               </ng-container>
               <ng-container *ngIf="!item.onSale">
                 <p><strong>Price:</strong> ${{item.price}}</p>
@@ -30,10 +30,10 @@
       </ng-container>
     <div class="col-md-4 total">
       <div class="col-md-11 card total-details">
-        <div style="padding: 10px">
+        <div class="cart-controls">
           <p><strong>Total:</strong> ${{total}}</p>
-          <button class="btn btn-primary" routerLink="checkout">Proceed to checkout</button>
-          <button class="btn btn-danger" (click)="confirmEmptyToggle()">Empty cart</button>
+          <button class="btn btn-primary" routerLink="checkout" [disabled]="cartContents.length == 0">Proceed to checkout</button>
+          <button class="btn btn-danger" (click)="confirmEmptyToggle()" [disabled]="cartContents.length == 0">Empty cart</button>
           <ng-container *ngIf="confirmEmptyCart">
             <div class="empty-confirmation">
               <p>Are you sure you want to remove all items from your shopping cart?</p>

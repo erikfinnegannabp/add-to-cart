@@ -23,6 +23,11 @@ mat-divider {
   margin: 2rem 8rem 2rem 2rem;
 }
 
+.place-order-button:disabled {
+  background-color: #DDB0B6;
+  color: white;
+}
+
 ::ng-deep .custom-frame {
   & .mat-checkbox-background, .mat-checkbox-frame {
     border-radius: 70% !important;

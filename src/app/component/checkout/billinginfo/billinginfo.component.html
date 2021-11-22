@@ -1,9 +1,10 @@
-  <div>
-    <span style="font-size: 0.6rem; color: #888" class="change-my-info">SAME AS MY NABP ACCOUNT/E-PROFILE</span>
-    <mat-slide-toggle style="margin-left: 1rem" (change)="onToggleUseProfile()" [(ngModel)]="useSavedProfile"></mat-slide-toggle>
-    <mat-icon class="change-my-info" style="margin-left: 7.6rem">arrow_forward</mat-icon>
-    <span style="margin-left: 3px" class="change-my-info">Change My Information</span>
-  </div>
+<div>
+  <span style="font-size: 0.6rem; color: #888" class="change-my-info">SAME AS MY NABP ACCOUNT/E-PROFILE</span>
+  <mat-slide-toggle style="margin-left: 1rem" (change)="onToggleUseProfile()" [(ngModel)]="useSavedProfile"></mat-slide-toggle>
+  <mat-icon class="change-my-info" style="margin-left: 7.6rem">arrow_forward</mat-icon>
+  <span style="margin-left: 3px" class="change-my-info">Change My Information</span>
+</div>
+
 <div style="display: flex">
 
   <form style="display: flex" [formGroup]="myFormGroup" (change)="updateBillingInfo()">

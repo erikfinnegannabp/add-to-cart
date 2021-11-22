@@ -9,7 +9,8 @@
 
   <mat-form-field style="width: 100%">
     <mat-label>Card Number</mat-label>
-    <input type="text" matInput formControlName="cardNumber" required>
+    <input style="width: 80%" type="text" matInput formControlName="cardNumber" required>
+    <img *ngIf="cardImgSrc != 'cardTypeNotRecognized'" style="height: 16px; max-width: 20%; float: right" src={{cardImgSrc}}>
   </mat-form-field>
 
   <mat-form-field style="width: 40%">
@@ -32,6 +33,7 @@
 
   <mat-form-field style="width: 47%">
     <mat-select formControlName="expirationYear" required>
+      <mat-option [value]="" selected></mat-option>
       <mat-option *ngFor="let year of nextTenYears" [value]="year">
         {{year}}
       </mat-option>
@@ -67,7 +69,7 @@
   <span class="auth-confirmation">PAYMENT AUTHORIZATION</span>
 </mat-checkbox>
 
-<p class="auth-confirmation">I, {{creditCardInfo.value.name || "[name]"}}, authorized this charge on {{currentDate}}
+<p class="auth-confirmation" routerLink="confirmation">I, {{creditCardInfo.value.name || "[name]"}}, authorized this charge on {{currentDate}}
   of {{"$" + cartTotal || "[amount]"}} to the [card type] ending in
   {{creditCardInfo.value.cardNumber.slice(-4) || "[last 4]"}} and payment to the National Association of
   Boards of Pharmacy (NABP) for the purchase shown.

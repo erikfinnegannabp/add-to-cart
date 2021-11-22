@@ -21,14 +21,13 @@
           <p>DATE PLACED: {{currentDate}}</p>
         </div>
         <div>
-          <button mat-button class="place-order-button" style="width: 200px; margin-left: 35rem">Print Confirmation</button>
+          <button mat-button style="width: 200px; margin-left: 35rem">Print Confirmation</button>
         </div>
     </mat-toolbar-row>
   </mat-toolbar>
 
-  <mat-card>
-    <div class="order-summary-table-container">
-      <div style="margin: auto; width: 80%; font-weight: bold;">
+    <div class="order-summary-table-container" style="border: 2px solid #E5E4EF; margin-top: 10px">
+      <div style="margin: 50px auto 0px auto; width: 80%; font-weight: bold;">
         <p>ORDER SUMMARY:</p>
       </div>
       <table mat-table [dataSource]="cartContents" class="mat-elevation-z8" style="margin: auto; width: 80%; box-shadow: none;">
@@ -65,9 +64,8 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
 
-      <div style="margin: auto; width: 80%; text-align: right;">
+      <div style="margin: auto; width: 80%; text-align: right; margin-bottom: 50px;">
         <p style="font-size: 30px; margin-top: 0.5rem; font-weight: bold;">TOTAL<span style="background-color: #E5E4EF; margin-left: 4rem">${{postDiscountTotal.toFixed(2)}}</span></p>
       </div>
     </div>
-  </mat-card>
 </div>

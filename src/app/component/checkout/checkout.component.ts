@@ -14,10 +14,10 @@ export class CheckoutComponent implements OnInit {
 
   constructor(private cart: CartService) { }
 
-  testMode: string = this.doTestMode();
+  testMode: string = this.doTestMode(); // This variable is never used, it just calls doTestMode
 
   doTestMode() {
-    const testMode = true;
+    const testMode = false;
     if (testMode) {
       this.cart.addToCart(new Product(
         "Some shirt",
