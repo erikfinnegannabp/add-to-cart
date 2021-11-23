@@ -58,3 +58,9 @@ button {
   position: absolute;
   color: #D50032
 }
+
+@media print {
+  mat-toolbar, div {
+    -webkit-print-color-adjust: exact;
+  }
+}

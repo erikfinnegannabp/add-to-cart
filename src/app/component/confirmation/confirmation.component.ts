@@ -101,4 +101,8 @@ export class ConfirmationComponent implements OnInit {
     this.billingInfoSubscription.unsubscribe();
   }
 
+  printConfirmation() {
+    window.print();
+  }
+
 }
