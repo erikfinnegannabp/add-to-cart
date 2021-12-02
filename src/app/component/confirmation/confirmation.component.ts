@@ -29,7 +29,7 @@ export class ConfirmationComponent implements OnInit {
     this.billingInfoSubscription = this.billingInfoService.currentUserData
         .subscribe((userData: UserData) => this.userData = userData);
 
-    const testMode = false;
+    const testMode = true;
     if (testMode) {
       this.cart.addToCart(new Product(
         "Some shirt",
@@ -47,46 +47,110 @@ export class ConfirmationComponent implements OnInit {
         "2000.00",
         0
       ))
-      // this.cart.addToCart(new Product(
-      //   "An SD card",
-      //   "Probably got pictures on it",
-      //   "electronics",
-      //   "no one is gonna see this",
-      //   "4.15",
-      //   0
-      // ))
-      // this.cart.addToCart(new Product(
-      //   "aaaa",
-      //   "Probably got pictures on it",
-      //   "electronics",
-      //   "no one is gonna see this",
-      //   "4.15",
-      //   0
-      // ))
-      // this.cart.addToCart(new Product(
-      //   "bbbb",
-      //   "Probably got pictures on it",
-      //   "electronics",
-      //   "no one is gonna see this",
-      //   "4.15",
-      //   0
-      // ))
-      // this.cart.addToCart(new Product(
-      //   "cccc",
-      //   "Probably got pictures on it",
-      //   "electronics",
-      //   "no one is gonna see this",
-      //   "4.15",
-      //   0
-      // ))
-      // this.cart.addToCart(new Product(
-      //   "dddd",
-      //   "Probably got pictures on it",
-      //   "electronics",
-      //   "no one is gonna see this",
-      //   "4.15",
-      //   0
-      // ))
+      this.cart.addToCart(new Product(
+        "An SD card",
+        "Probably got pictures on it",
+        "electronics",
+        "no one is gonna see this",
+        "4.15",
+        0
+      ))
+      this.cart.addToCart(new Product(
+        "aaaa",
+        "Probably got pictures on it",
+        "electronics",
+        "no one is gonna see this",
+        "4.15",
+        0
+      ))
+      this.cart.addToCart(new Product(
+        "bbbb",
+        "Probably got pictures on it",
+        "electronics",
+        "no one is gonna see this",
+        "4.15",
+        0
+      ))
+      this.cart.addToCart(new Product(
+        "cccc",
+        "Probably got pictures on it",
+        "electronics",
+        "no one is gonna see this",
+        "4.15",
+        0
+      ))
+      this.cart.addToCart(new Product(
+        "dddd",
+        "Probably got pictures on it",
+        "electronics",
+        "no one is gonna see this",
+        "4.15",
+        0
+      ))
+      this.cart.addToCart(new Product(
+        "ccccd",
+        "Probably got pictures on it",
+        "electronics",
+        "no one is gonna see this",
+        "4.15",
+        0
+      ))
+      this.cart.addToCart(new Product(
+        "ddddd",
+        "Probably got pictures on it",
+        "electronics",
+        "no one is gonna see this",
+        "4.15",
+        0
+      ))
+      this.cart.addToCart(new Product(
+        "cccce",
+        "Probably got pictures on it",
+        "electronics",
+        "no one is gonna see this",
+        "4.15",
+        0
+      ))
+      this.cart.addToCart(new Product(
+        "dddde",
+        "Probably got pictures on it",
+        "electronics",
+        "no one is gonna see this",
+        "4.15",
+        0
+      ))
+      this.cart.addToCart(new Product(
+        "ccccf",
+        "Probably got pictures on it",
+        "electronics",
+        "no one is gonna see this",
+        "4.15",
+        0
+      ))
+      this.cart.addToCart(new Product(
+        "ddddf",
+        "Probably got pictures on it",
+        "electronics",
+        "no one is gonna see this",
+        "4.15",
+        0
+      ))
+      this.cart.addToCart(new Product(
+        "ccccg",
+        "Probably got pictures on it",
+        "electronics",
+        "no one is gonna see this",
+        "4.15",
+        0
+      ))
+      this.cart.addToCart(new Product(
+        "ddddg",
+        "Probably got pictures on it",
+        "electronics",
+        "no one is gonna see this",
+        "4.15",
+        0
+      ))
     }
 
     this.cartContentSubscription = this.cart.currentCartItems.subscribe(

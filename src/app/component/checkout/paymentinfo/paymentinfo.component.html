@@ -55,23 +55,28 @@
     </span>
   </div>
 </div>
+
 <div class="total-amount">
   <span style="float: left">TOTAL</span>
   <span style="float: right">${{cartTotal}}</span>
   <mat-divider></mat-divider><br>
-
-
 </div>
 
-<button mat-button class="place-order-button" style="width: 200px" routerLink="confirmation" [disabled]="creditCardInfo.invalid || hasMissingInfo || !creditCardInfo.value.authorized">Place Order</button>
+<div style="width: 100%; justify-content: center; display: flex;">
+  <button mat-button class="place-order-button" style="width: 200px; margin: 2rem" routerLink="confirmation" [disabled]="creditCardInfo.invalid || hasMissingInfo || !creditCardInfo.value.authorized">Place Order</button>
+</div>
 
-<mat-checkbox class="custom-frame" formControlName="authorized">
-  <span class="auth-confirmation">PAYMENT AUTHORIZATION</span>
-</mat-checkbox>
+<div style="width: 100%; margin-bottom: 0.6rem">
+  <mat-checkbox class="custom-frame" formControlName="authorized">
+    <span class="auth-confirmation">PAYMENT AUTHORIZATION</span>
+  </mat-checkbox>
+</div>
 
-<p class="auth-confirmation" routerLink="confirmation">I, {{creditCardInfo.value.name || "[name]"}}, authorized this charge on {{currentDate}}
-  of {{"$" + cartTotal || "[amount]"}} to the [card type] ending in
-  {{creditCardInfo.value.cardNumber.slice(-4) || "[last 4]"}} and payment to the National Association of
-  Boards of Pharmacy (NABP) for the purchase shown.
-</p>
+<div style="width: 100%">
+  <p class="auth-confirmation" routerLink="confirmation">I, {{creditCardInfo.value.name || "[name]"}}, authorized this charge on {{currentDate}}
+    of {{"$" + cartTotal || "[amount]"}} to the [card type] ending in
+    {{creditCardInfo.value.cardNumber.slice(-4) || "[last 4]"}} and payment to the National Association of
+    Boards of Pharmacy (NABP) for the purchase shown.
+  </p>
+</div>
 </form>

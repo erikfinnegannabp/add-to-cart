@@ -17,7 +17,7 @@ export class CheckoutComponent implements OnInit {
   testMode: string = this.doTestMode(); // This variable is never used, it just calls doTestMode
 
   doTestMode() {
-    const testMode = false;
+    const testMode = true;
     if (testMode) {
       this.cart.addToCart(new Product(
         "Some shirt",

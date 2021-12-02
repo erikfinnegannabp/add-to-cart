@@ -1,7 +1,7 @@
 <mat-toolbar>
   <mat-toolbar-row>
-    <mat-icon class="back-to-cart" routerLink="/cart">arrow_back</mat-icon>
-    <span class="back-to-cart" style="margin-left: 30px" routerLink="/cart">Services Dashboard</span>
+    <mat-icon class="services-dashboard" routerLink="/cart">arrow_back</mat-icon>
+    <span class="services-dashboard" style="margin-left: 30px" routerLink="/cart">Services Dashboard</span>
     <span class="purple-text" style="margin: 0 auto">Order Confirmation</span>
   </mat-toolbar-row>
 </mat-toolbar>
@@ -13,59 +13,59 @@
   <p class="purple-text">{{userData.contactEmail == "" ? "No confirmation was sent as there was no email address provided in the billing information." : "A confirmation email with order details has been sent to "}}<b>{{userData.contactEmail}}</b></p>
 </div>
 
-<div style="width: 80%; height: 100%; margin: auto;">
+<div class="print-me" style="width: 80%; height: 100%; margin: auto;">
   <mat-toolbar>
     <mat-toolbar-row>
-        <div class="order-header">
+      <div style="width: 100%">
+        <div class="order-header" style="float: left">
           <p>ORDER NUMBER: 1234</p>
           <p>DATE PLACED: {{currentDate}}</p>
         </div>
-        <div>
-          <button mat-button (click)="printConfirmation()" style="width: 200px; margin-left: 35rem">Print Confirmation</button>
-        </div>
+        <button mat-button (click)="printConfirmation()" style="width: 200px; float: right; margin-top: 1rem">Print Confirmation</button>
+      </div>
     </mat-toolbar-row>
   </mat-toolbar>
 
-    <div class="order-summary-table-container" style="border: 2px solid #E5E4EF; margin-top: 10px">
-      <div style="margin: 50px auto 0px auto; width: 80%; font-weight: bold;">
-        <p>ORDER SUMMARY:</p>
-      </div>
-      <table mat-table [dataSource]="cartContents" class="mat-elevation-z8" style="margin: auto; width: 80%; box-shadow: none;">
-
-        <ng-container matColumnDef="description">
-          <th mat-header-cell *matHeaderCellDef>Description</th>
-          <td mat-cell *matCellDef="let item" style="text-align: left; max-width: 30rem; padding-right: 10px;">
-            <span style="font-size: medium; font-weight: bold">{{item.title}}</span><br>
-            <span style="font-size: small; font-style: italic" class=item-desc>{{item.description}}</span>
-          </td>
-        </ng-container>
-
-        <ng-container matColumnDef="price">
-          <th mat-header-cell *matHeaderCellDef>Price</th>
-          <td mat-cell *matCellDef="let item">${{item.price}}</td>
-        </ng-container>
-
-        <ng-container matColumnDef="discount">
-          <th mat-header-cell *matHeaderCellDef>Discount</th>
-          <td mat-cell *matCellDef="let item" style="font-weight: bold; color: #D50032">${{item.discountAmt}}</td>
-        </ng-container>
-
-        <ng-container matColumnDef="quantity">
-          <th mat-header-cell *matHeaderCellDef>Qty</th>
-          <td mat-cell *matCellDef="let item">{{item.quantity}}</td>
-        </ng-container>
-
-        <ng-container matColumnDef="total">
-          <th mat-header-cell *matHeaderCellDef>Item total</th>
-          <td mat-cell *matCellDef="let item" style="font-weight: bold">${{(item.finalPrice * item.quantity).toFixed(2)}}</td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-
-      <div style="margin: auto; width: 80%; text-align: right; margin-bottom: 50px;">
-        <p style="font-size: 30px; margin-top: 0.5rem; font-weight: bold;">TOTAL<span style="background-color: #E5E4EF; margin-left: 4rem">${{postDiscountTotal.toFixed(2)}}</span></p>
-      </div>
+  <div class="order-summary-table-container" style="border: 2px solid #E5E4EF; margin-top: 10px;">
+    <div style="margin: 50px auto 0px auto; width: 80%; font-weight: bold;">
+      <p>ORDER SUMMARY:</p>
     </div>
+    <table mat-table [dataSource]="cartContents" class="mat-elevation-z8" style="margin: auto; width: 80%; box-shadow: none;">
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <td mat-cell *matCellDef="let item" style="text-align: left; max-width: 30rem; padding-right: 10px;">
+          <span style="font-size: medium; font-weight: bold">{{item.title}}</span><br>
+          <span style="font-size: small; font-style: italic" class=item-desc>{{item.description}}</span>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>Price</th>
+        <td mat-cell *matCellDef="let item">${{item.price}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="discount">
+        <th mat-header-cell *matHeaderCellDef>Discount</th>
+        <td mat-cell *matCellDef="let item" style="font-weight: bold; color: #D50032">${{item.discountAmt}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef>Qty</th>
+        <td mat-cell *matCellDef="let item">{{item.quantity}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef>Item total</th>
+        <td mat-cell *matCellDef="let item" style="font-weight: bold">${{(item.finalPrice * item.quantity).toFixed(2)}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <div style="margin: auto; width: 80%; text-align: right; margin-bottom: 50px;">
+      <p style="font-size: 30px; margin-top: 0.5rem; font-weight: bold;">TOTAL<span style="background-color: #E5E4EF; margin-left: 4rem">${{postDiscountTotal.toFixed(2)}}</span></p>
+    </div>
+  </div>
 </div>

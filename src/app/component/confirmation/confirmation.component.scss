@@ -14,7 +14,7 @@ h1 {
   color: #7D79AF;
 }
 
-.back-to-cart {
+.services-dashboard {
   position: absolute;
   color: #D50032
 }
@@ -38,7 +38,7 @@ button {
   outline-color: #D50032;
   border-radius: 50px;
   float: right;
-  margin: 2rem 8rem 2rem 2rem;
+  // margin: 2rem 8rem 2rem 2rem;
 }
 
 .mat-header-cell, .mat-cell, .mat-footer-cell {
@@ -62,5 +62,8 @@ button {
 @media print {
   mat-toolbar, div {
     -webkit-print-color-adjust: exact;
+  }
+  mat-toolbar {
+    visibility: hidden;
   }
 }

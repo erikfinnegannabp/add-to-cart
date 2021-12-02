@@ -1,3 +1,7 @@
+header {
+  white-space: nowrap;
+}
+
 .form-control {
   border-radius: 3px;
   width: 600px;
@@ -10,11 +14,6 @@
 
 .navbar-brand:hover {
   cursor: pointer;
-}
-
-.ebftest {
-  background-color: red;
-  height: 5px;
 }
 
 .search-icon {
@@ -31,6 +30,6 @@ button {
 
 @media print {
   header {
-    -webkit-print-color-adjust: exact;
+    visibility: hidden;
   }
 }
